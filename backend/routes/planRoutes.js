@@ -3,11 +3,12 @@ const router = express.Router();
 import {
   getPlans,
   setPlan,
-  UpdatePlan,
+  updatePlan,
   deletePlan,
+  getPlanById,
 } from "../controllers/planController.js";
 
 router.route("/").get(getPlans).post(setPlan);
-router.route("/:id").delete(deletePlan).put(UpdatePlan);
+router.route("/:id").get(getPlanById).delete(deletePlan).put(updatePlan);
 
 export { router as planRoutes };

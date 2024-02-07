@@ -11,6 +11,7 @@ const errorHandler = (err, req, res, next) => {
     timestamp: new Date().toISOString(),
     stack: err.stack,
   });
+  next();
 };
 
 export { errorHandler };
