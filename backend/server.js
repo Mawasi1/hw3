@@ -3,11 +3,15 @@ import 'dotenv/config';
 import { planRoutes } from './routes/planRoutes.js';
 import { errorHandler } from './middleware/errorMiddleware.js';
 import { connectDB } from './config/db.js';
+import cors from "cors"; // Import CORS package
 
 connectDB();
 
 const app = express();
 const port = process.env.PORT || 8080;
+
+app.use(cors()); // Enable CORS for all routes and origins
+// You can also configure CORS for specific routes and origins as needed
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -24,6 +28,5 @@ const startServer = () => {
 if (process.env.NODE_ENV === 'production') {
   startServer();
 }
-
 
 export { app, startServer };
