@@ -1,4 +1,4 @@
-# Express/MongoDB API Backend.
+# Express/MongoDB API Backend + react.
 ### installtaion
 ***
 - How to run the code in your local machine:
